@@ -1,6 +1,6 @@
 {
   "name": "swagger-test-templates",
-  "version": "1.4.2",
+  "version": "1.4.3",
   "description": "Generate test code from a Swagger spec. Updated by C Rethman to include newer dependencies that remove reported vulnerabilities",
   "main": "index.js",
   "scripts": {
