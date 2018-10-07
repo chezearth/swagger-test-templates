@@ -1,7 +1,7 @@
 {
   "name": "swagger-test-templates",
   "version": "1.4.2",
-  "description": "Generate test code from a Swagger spec",
+  "description": "Generate test code from a Swagger spec. Updated by C Rethman to include newer dependencies that remove reported vulnerabilities",
   "main": "index.js",
   "scripts": {
     "test": "node mocha.js",
@@ -39,7 +39,7 @@
   "bugs": {
     "url": "https://github.com/apigee-127/swagger-test-templates/issues"
   },
-  "homepage": "https://github.com/apigee-127/swagger-test-templates#readme",
+  "homepage": "https://github.com/chezearth/swagger-test-templates#readme",
   "devDependencies": {
     "chai": "^3.0.0",
     "dotenv": "^1.2.0",
