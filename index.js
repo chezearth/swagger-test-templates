@@ -112,23 +112,23 @@ function getData(swagger, apiPath, operation, response, config, info) {
       securityType = swagger.securityDefinitions[element];
       element = _.snakeCase(element).toUpperCase();
       switch (securityType.type) {
-        case 'basic':
-          data.headerSecurity = {name: element, type: 'Basic'};
-          break;
-        case 'apiKey':
-          if (securityType.in === 'query') {
-            data.queryApiKey =
+      case 'basic':
+        data.headerSecurity = {name: element, type: 'Basic'};
+        break;
+      case 'apiKey':
+        if (securityType.in === 'query') {
+          data.queryApiKey =
             {name: element, type: securityType.name};
-          } else if (securityType.in === 'header') {
-            data.headerApiKey =
+        } else if (securityType.in === 'header') {
+          data.headerApiKey =
             {name: element, type: securityType.name};
-          }
-          break;
-        case 'oauth2':
-          data.headerSecurity = {name: element, type: 'Bearer'};
-          break;
-        default:
-          throw new Error('The type is undefined.');
+        }
+        break;
+      case 'oauth2':
+        data.headerSecurity = {name: element, type: 'Bearer'};
+        break;
+      default:
+        throw new Error('The type is undefined.');
       }
     });
   }
@@ -138,20 +138,20 @@ function getData(swagger, apiPath, operation, response, config, info) {
     // process different parameters
     _.forEach(childProperty.parameters, function(parameter) {
       switch (parameter.in) {
-        case 'query':
-          data.queryParameters.push(parameter);
-          break;
-        case 'path':
-          data.pathParameters.push(parameter);
-          break;
-        case 'header':
-          data.headerParameters.push(parameter);
-          break;
-        case 'formData':
-          data.formParameters.push(parameter);
-          break;
-        default:
-          throw new Error('The type is undefined.');
+      case 'query':
+        data.queryParameters.push(parameter);
+        break;
+      case 'path':
+        data.pathParameters.push(parameter);
+        break;
+      case 'header':
+        data.headerParameters.push(parameter);
+        break;
+      case 'formData':
+        data.formParameters.push(parameter);
+        break;
+      default:
+        throw new Error('The type is undefined.');
       }
     });
   }
@@ -161,23 +161,23 @@ function getData(swagger, apiPath, operation, response, config, info) {
     // only adds body parameters to request, ignores query params
     _.forEach(grandProperty.parameters, function(parameter) {
       switch (parameter.in) {
-        case 'query':
-          data.queryParameters.push(parameter);
-          break;
-        case 'header':
-          data.headerParameters.push(parameter);
-          break;
-        case 'path':
-          data.pathParameters.push(parameter);
-          break;
-        case 'formData':
-          data.formParameters.push(parameter);
-          break;
-        case 'body':
-          data.bodyParameters.push(parameter);
-          break;
-        default:
-          throw new Error('The type is undefined.');
+      case 'query':
+        data.queryParameters.push(parameter);
+        break;
+      case 'header':
+        data.headerParameters.push(parameter);
+        break;
+      case 'path':
+        data.pathParameters.push(parameter);
+        break;
+      case 'formData':
+        data.formParameters.push(parameter);
+        break;
+      case 'body':
+        data.bodyParameters.push(parameter);
+        break;
+      default:
+        throw new Error('The type is undefined.');
       }
     });
   }

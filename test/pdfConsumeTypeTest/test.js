@@ -46,8 +46,8 @@ describe('test xml mime type', function() {
         testModule: 'request',
         loadTest: [{pathName: '/user', operation: 'get',
           load: {requests: 1000, concurrent: 100}},
-          {pathName: '/user', operation: 'put',
-            load: {requests: 1000, concurrent: 100}}]
+        {pathName: '/user', operation: 'put',
+          load: {requests: 1000, concurrent: 100}}]
       });
 
       var paths = [];
@@ -175,8 +175,8 @@ describe('test xml mime type', function() {
         testModule: 'supertest',
         loadTest: [{pathName: '/user', operation: 'get',
           load: {requests: 1000, concurrent: 100}},
-          {pathName: '/user', operation: 'put',
-            load: {requests: 1000, concurrent: 100}}]
+        {pathName: '/user', operation: 'put',
+          load: {requests: 1000, concurrent: 100}}]
       });
 
       var paths = [];

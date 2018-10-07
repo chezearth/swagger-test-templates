@@ -39,9 +39,9 @@ var info;
 
 rules = yaml.safeLoad(read(join(__dirname, '/../../.eslintrc'), 'utf8'));
 rules.env = {mocha: true};
-/*eslint-disable */
+/*eslint-disable*/
 getData = myModule.__get__('getData');
-/*eslint-enable */
+/*eslint-enable*/
 config1 = {
   assertionFormat: 'assert',
   pathName: [],
@@ -65,75 +65,75 @@ describe('Test getData function', function() {
 
     it('should get all the data parsed for the /plan',
       function() {
-      var data = getData(swagger, '/plan', 'post', '200', config1, info);
+        var data = getData(swagger, '/plan', 'post', '200', config1, info);
 
-      expect(data).to.have.property('bodyParameters');
-      expect(data.bodyParameters).to.have.length(1);
-      expect(data).to.have.property('queryParameters');
-      expect(data.queryParameters).to.have.length(1);
-      expect(data).to.have.property('path');
-      expect(data.path).to.equal('/plan');
-    });
+        expect(data).to.have.property('bodyParameters');
+        expect(data.bodyParameters).to.have.length(1);
+        expect(data).to.have.property('queryParameters');
+        expect(data.queryParameters).to.have.length(1);
+        expect(data).to.have.property('path');
+        expect(data.path).to.equal('/plan');
+      });
 
     it('should get all the data parsed for the /plan/{plan_id}/users',
       function() {
-      var data = getData(swagger,
+        var data = getData(swagger,
         '/plan/{plan_id}/users', 'get', '200', config1, info);
 
-      expect(data).to.have.property('pathParameters');
-      expect(data.pathParameters).to.have.length(1);
-      expect(data).to.have.property('path');
-      expect(data.path).to.equal('/plan/{plan_id}/users');
-    });
+        expect(data).to.have.property('pathParameters');
+        expect(data.pathParameters).to.have.length(1);
+        expect(data).to.have.property('path');
+        expect(data.path).to.equal('/plan/{plan_id}/users');
+      });
 
     it('should get all the data parsed for the /user post',
       function() {
-      var data = getData(swagger, '/user', 'post', '200', config1, info);
+        var data = getData(swagger, '/user', 'post', '200', config1, info);
 
-      expect(data).to.have.property('bodyParameters');
-      expect(data.bodyParameters).to.have.length(1);
-      expect(data).to.have.property('queryParameters');
-      expect(data.queryParameters).to.have.length(2);
-      expect(data).to.have.property('path');
-      expect(data.path).to.equal('/user');
-    });
+        expect(data).to.have.property('bodyParameters');
+        expect(data.bodyParameters).to.have.length(1);
+        expect(data).to.have.property('queryParameters');
+        expect(data.queryParameters).to.have.length(2);
+        expect(data).to.have.property('path');
+        expect(data.path).to.equal('/user');
+      });
   });
 
   describe('Test swagger with config2', function() {
 
     it('should get all the data parsed for the /plan',
       function() {
-      var data = getData(swagger, '/plan', 'post', '200', config2, info);
+        var data = getData(swagger, '/plan', 'post', '200', config2, info);
 
-      expect(data).to.have.property('bodyParameters');
-      expect(data.bodyParameters).to.have.length(1);
-      expect(data).to.have.property('queryParameters');
-      expect(data.queryParameters).to.have.length(1);
-      expect(data).to.have.property('path');
-      expect(data.path).to.equal('http://localhost:10010/plan');
-    });
+        expect(data).to.have.property('bodyParameters');
+        expect(data.bodyParameters).to.have.length(1);
+        expect(data).to.have.property('queryParameters');
+        expect(data.queryParameters).to.have.length(1);
+        expect(data).to.have.property('path');
+        expect(data.path).to.equal('http://localhost:10010/plan');
+      });
 
     it('should get all the data parsed for the /plan/{plan_id}/users',
       function() {
-      var data = getData(swagger,
+        var data = getData(swagger,
         '/plan/{plan_id}/users', 'get', '200', config2, info);
 
-      expect(data).to.have.property('pathParameters');
-      expect(data.pathParameters).to.have.length(1);
-      expect(data).to.have.property('path');
-      expect(data.path).to.equal('http://localhost:10010/plan/{plan_id}/users');
-    });
+        expect(data).to.have.property('pathParameters');
+        expect(data.pathParameters).to.have.length(1);
+        expect(data).to.have.property('path');
+        expect(data.path).to.equal('http://localhost:10010/plan/{plan_id}/users');
+      });
 
     it('should get all the data parsed for the /user post',
       function() {
-      var data = getData(swagger, '/user', 'post', '200', config2, info);
+        var data = getData(swagger, '/user', 'post', '200', config2, info);
 
-      expect(data).to.have.property('bodyParameters');
-      expect(data.bodyParameters).to.have.length(1);
-      expect(data).to.have.property('queryParameters');
-      expect(data.queryParameters).to.have.length(2);
-      expect(data).to.have.property('path');
-      expect(data.path).to.equal('http://localhost:10010/user');
-    });
+        expect(data).to.have.property('bodyParameters');
+        expect(data.bodyParameters).to.have.length(1);
+        expect(data).to.have.property('queryParameters');
+        expect(data.queryParameters).to.have.length(2);
+        expect(data).to.have.property('path');
+        expect(data.path).to.equal('http://localhost:10010/user');
+      });
   });
 });

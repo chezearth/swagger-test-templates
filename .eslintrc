@@ -4,11 +4,18 @@
 #   Rules: http://eslint.org/docs/rules/
 
 ---
+#  parserOptions:
+#    ecmaVersion: 6
+#    sourceType": "script"
+#    ecmaFeatures:
+#      globalReturn: true
+#      impliedStrict: true
+
   env:
     node: true
 
   rules:
-    indent: [2, 2]
+    indent: [2, 2, {"MemberExpression": 0}]
     brace-style: [2, "1tbs"]
     comma-style: [2, "last"]
     curly: [2, "multi-line"]
@@ -22,12 +29,16 @@
     no-path-concat: 2
     quotes: [2, "single"]
     radix: 2
-    space-after-keywords: [2, "always"]
+#    space-after-keywords: [2, "always"]
+    keyword-spacing: ["error"]
     space-before-blocks: [2, "always"]
     space-before-function-paren: [2, "never"]
-    space-in-brackets: [2, "never"]
+#    space-in-brackets: [2, "never"]
+    object-curly-spacing: [2, "never"]
+    array-bracket-spacing: [2, "never"]
+    computed-property-spacing: [2, "never"]
     space-in-parens: [2, "never"]
-    spaced-line-comment: [2, "always"]
+    spaced-comment: [2, "always", {"exceptions": ["eslint-enable", "eslint-disable"]}]
     strict: [2, "global"]
     valid-jsdoc: [2, {"requireReturn": false, "prefer": {"return": "returns"}}]
     wrap-iife: 2
@@ -38,4 +49,4 @@
     dot-notation: 2
     new-cap: 2
     eol-last: 2
-    no-process-exit: false
+    no-process-exit: 0 #false

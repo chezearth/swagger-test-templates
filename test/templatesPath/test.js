@@ -59,8 +59,8 @@ ncp(join(process.cwd(), 'templates'),
     console.log('templates copied');
     fs.appendFile(join(customTemplatesPath, 'outerDescribe.handlebars'),
       'THIS IS A CUSTOM TEMPLATE', function(appendErr) {
-      return console.log(appendErr);
-    });
+        return console.log(appendErr);
+      });
   });
 
 describe('UserDefined template location', function() {

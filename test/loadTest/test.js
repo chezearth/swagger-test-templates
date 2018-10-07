@@ -221,7 +221,7 @@ describe('security swagger', function() {
         testModule: 'request',
         loadTest: [{pathName: '/user', operation: 'get',
           load: {requests: 1000, concurrent: 100}},
-          {pathName: '/user', operation: 'put',
+        {pathName: '/user', operation: 'put',
           load: {requests: 1000, concurrent: 100}}]
       });
 
@@ -267,7 +267,7 @@ describe('security swagger', function() {
         testModule: 'supertest',
         loadTest: [{pathName: '/user', operation: 'get',
           load: {requests: 1000, concurrent: 100}},
-          {pathName: '/user', operation: 'put',
+        {pathName: '/user', operation: 'put',
           load: {requests: 1000, concurrent: 100}}]
       });
 

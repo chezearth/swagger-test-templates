@@ -33,9 +33,9 @@ describe('Test json-schema-deref-sync module', function() {
   describe('Test resolving swagger references', function() {
     it('should return a json with the references resolved',
       function() {
-      var resolved = deref(swaggerWithRef);
+        var resolved = deref(swaggerWithRef);
 
-      expect(resolved).to.eql(swaggerResolved);
-    });
+        expect(resolved).to.eql(swaggerResolved);
+      });
   });
 });
